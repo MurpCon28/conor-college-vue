@@ -1,13 +1,13 @@
 <template>
 
-  <div v-if="loggedIn" class="home">
+  <div v-if="loggedIn">
     <h3>Welcome, this is the Home page!</h3>
     <br>
-    <h5>You are logged in<br> You can now view courses, lecturers and enrolments</h5>
+    <h5>You are logged in</h5>
   </div>
 
-  <div v-else class="home">
-    <!-- <b-form @submit="login()">
+  <div v-else>
+    <b-form @submit="login()">
       <b-form-group id="input-group-1" label="Email address:">
         <b-form-input
           id="input-1" v-model="form.email" type="email" placeholder="Enter email" required></b-form-input>
@@ -15,14 +15,11 @@
 
       <b-form-group id="input-group-2" label="Password:" label-for="input-2">
         <b-form-input
-          id="input-2" v-model="form.password" placeholder="Enter password" required></b-form-input>
+          id="input-2" v-model="form.password" type="password" placeholder="Enter password" required></b-form-input>
       </b-form-group>
 
       <b-button type="submit" variant="primary" @click="login()">Login</b-button>
-    </b-form> -->
-
-    <h3>Welcome to College Vue!</h3><br>
-    <h5>You can view courses, lectureres and enrolments on the site by registering or logging in!</h5>
+    </b-form>
   </div>
 
 </template>
@@ -31,7 +28,7 @@
 import axios from '@/config/api';
 
 export default {
-  name: 'Home',
+  name: 'Login',
   components: {
   },
   props: {
@@ -67,7 +64,5 @@ export default {
 </script>
 
 <style>
-.home {
-  text-align: center;
-}
+
 </style>
