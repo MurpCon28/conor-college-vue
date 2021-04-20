@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <b-form @submit="createUser()">
+    <b-form>
       <b-form-group id="input-group-1" label="Full Name:">
         <b-form-input
           id="input-1" v-model="form.name" type="text" placeholder="Enter full name" required></b-form-input>
@@ -17,7 +17,7 @@
           id="input-3" v-model="form.password" type="password" placeholder="Enter password" required></b-form-input>
       </b-form-group>
 
-      <b-button type="submit" variant="primary" @click="createUser()">Register</b-button>
+      <b-button type="submit" variant="primary" @click.prevent="createUser()">Register</b-button>
     </b-form>
 
   </div>
@@ -58,6 +58,8 @@ export default {
       })
       .then(response => {
         console.log(response.data);
+        localStorage.setItem('token', response.data.token);
+        this.$emit('login');
         this.$router.push({ name: 'home' });
       })
       .catch(error => {

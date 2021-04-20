@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <b-form @submit="editCourse()">
+    <b-form>
       <b-form-group id="input-group-1" label="Title:">
         <b-form-input
           id="input-1" v-model="form.title" type="text" placeholder="Enter Course Title" required></b-form-input>
@@ -31,7 +31,7 @@
       </b-form-group>
 
       <b-button variant="light"><router-link :to="{ name: 'courses_index'}">Back</router-link></b-button>
-      <b-button type="submit" variant="primary" @click="editCourse()">Confirm Changes</b-button>
+      <b-button type="submit" variant="primary" @click.prevent="editCourse()">Confirm Changes</b-button>
     </b-form>
 
   </div>

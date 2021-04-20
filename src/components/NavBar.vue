@@ -12,8 +12,8 @@
         <b-button @click="logout()"><b-icon icon="power" aria-hidden="true"></b-icon> Logout</b-button>
       </div>
       <div v-else>
-        <b-nav-item :to="{name: 'login'}">Login</b-nav-item>
-        <b-nav-item :to="{name: 'register'}">Register</b-nav-item>
+        <b-nav-item :to="{name: 'login'}" class="float-left">Login</b-nav-item>
+        <b-nav-item :to="{name: 'register'}" class="float-right">Register</b-nav-item>
       </div>
       <!-- <router-link :to="{ name: 'user', params: { userId: 123 }}">User</router-link> -->
     </b-navbar-nav>

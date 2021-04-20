@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <b-form @submit="createLecturer()">
+    <b-form>
       <b-form-group id="input-group-1" label="Name:">
         <b-form-input
           id="input-1" v-model="form.name" type="text" placeholder="Enter Full Name" required></b-form-input>
@@ -23,7 +23,7 @@
       </b-form-group>
 
       <b-button variant="light"><router-link :to="{ name: 'lecturers_index'}">Back</router-link></b-button>
-      <b-button type="submit" variant="primary" @click="createLecturer()">Create Lecturer</b-button>
+      <b-button type="submit" variant="primary" @click.prevent="createLecturer()">Create Lecturer</b-button>
     </b-form>
 
   </div>

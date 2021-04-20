@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <b-form @submit="createEnrolments()">
+    <b-form>
       <b-form-group id="input-group-1" label="Date:">
         <b-form-input
           id="input-1" v-model="form.date" type="date" required></b-form-input>
@@ -29,7 +29,7 @@
       </b-form-group>
 
       <b-button variant="light"><router-link :to="{ name: 'enrolments_index'}">Back</router-link></b-button>
-      <b-button type="submit" variant="primary" @click="createEnrolments()">Create Enrolment</b-button>
+      <b-button type="submit" variant="primary" @click.prevent="createEnrolments()">Create Enrolment</b-button>
     </b-form>
 
   </div>
